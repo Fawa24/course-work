@@ -34,6 +34,10 @@ public partial class DishDbContext : DbContext
             entity.Property(e => e.DishId)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("dish_id");
+            entity.Property(e => e.DishName)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("dish_name");
             entity.Property(e => e.DishPrice).HasColumnName("dish_price");
             entity.Property(e => e.DishType)
                 .HasMaxLength(30)

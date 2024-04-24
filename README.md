@@ -32,6 +32,7 @@ Connect to newly created database and run next commands
 ```bash
   CREATE TABLE Dishes (
     dish_id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    dish_name VARCHAR(30) NOT NULL,
     dish_type VARCHAR(30) NOT NULL,
     restaurant_type VARCHAR(30) NOT NULL,
     dish_price INT NOT NULL,
