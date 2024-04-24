@@ -1,6 +1,11 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using Entities.Entities;
+using Microsoft.EntityFrameworkCore;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<DishDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+var app = builder.Build();
 
 app.Run();
