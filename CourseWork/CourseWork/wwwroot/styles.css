@@ -33,13 +33,15 @@ a {
 .navtop-left {
     display: flex;
     justify-content: space-between;
-    width: 415px;
+    width: 325px;
 }
 
 .navtop-right {
+    justify-content: space-between;
     justify-self: right;
     display: flex;
     align-items: center;
+    width: 270px;
 }
 
 #login-button {
