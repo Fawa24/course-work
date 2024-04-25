@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+main {
+    padding: 50px 100px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.navbar-top {
+    font-weight: 900;
+    padding: 0 16px 0 16px;
+    background-color: rgb(34, 34, 34);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navtop-left {
+    display: flex;
+    justify-content: space-between;
+    width: 415px;
+}
+
+.navtop-right {
+    justify-self: right;
+    display: flex;
+    align-items: center;
+}
+
+#login-button {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 32px;
+    height: 50px;
+    width: 130px;
+    font-weight: 900;
+    color: white;
+    font-size: 16px;
+    border-style: none;
+}
+
+#login-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-bot {
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    white-space: pre-wrap;
+}
+
+.dish-card {
+    height: 180px;
+    width: 155px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    word-wrap: break-word;
+    background-color: #ffd64f;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.submit-button {
+    width: 120px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #9d9cff;
+}
+
+.submit-button:hover {
+    background-color: #bfbef6;
+}
+
+#feedback-container {
+
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#feedback-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; 
+}
+
+    #feedback-form textarea {
+        width: calc(100% - 20px); 
+        height: 150px; 
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        resize: none; 
+    }
+
+    #feedback-form button {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto; 
+    }
+
+        #feedback-form button:hover {
+            background-color: #cc0000;
+        }

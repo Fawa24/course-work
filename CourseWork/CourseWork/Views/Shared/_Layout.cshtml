@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="styles.css" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar-top">
+            <div class="navtop-left">
+                <a href="/support">
+                    <img src="phone-icon.svg" style="width: 21.5px; height: 21.5px; margin: 4px 4px 0 0"/>
+                    <p>Служба пітримки</p>
+                </a>
+                <a href="/feedback">Відгуки</a>
+                <a href="/order-tracker">Order Tracker</a>
+            </div>  
+            <div class="navtop-right">
+                <button id="login-button">Увійти</button>
+            </div>
+        </div>
+        <div class="navbar-bot">
+
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
