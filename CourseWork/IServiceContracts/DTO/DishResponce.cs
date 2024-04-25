@@ -15,6 +15,8 @@ namespace IServiceContracts.DTO
 
         public int DishPrice { get; set; }
 
+        public bool InStock { get; set; }
+
         public override bool Equals(object? obj)
         {
             if (obj == null) return false;
@@ -25,7 +27,8 @@ namespace IServiceContracts.DTO
                 objToCompare.DishName == this.DishName &&
                 objToCompare.DishPrice == this.DishPrice &&
                 objToCompare.DishType == this.DishType &&
-                objToCompare.RestaurantType == this.RestaurantType)
+                objToCompare.RestaurantType == this.RestaurantType &&
+                objToCompare.InStock == this.InStock)
             {
                 return true;
             }
@@ -49,7 +52,8 @@ namespace IServiceContracts.DTO
                 DishName = dish.DishName,
                 DishType = dish.DishType,
                 RestaurantType = dish.RestaurantType,
-                DishPrice = dish.DishPrice
+                DishPrice = dish.DishPrice,
+                InStock = dish.InStock
             };
         }
     }
