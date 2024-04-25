@@ -13,6 +13,11 @@ namespace IServiceContracts.DTO
 
         public virtual ICollection<Dish> Dishes { get; set; } = new List<Dish>();
 
+        public int CalculatePrice()
+        {
+            return Dishes.Select(dish => dish.DishPrice).Sum(); 
+        } 
+
         public override bool Equals(object? obj)
         {
             if (obj == null) return false;

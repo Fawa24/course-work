@@ -1,6 +1,7 @@
 ﻿using Entities.Entities;
 using IServiceContracts;
 using IServiceContracts.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace Services
 {
@@ -42,7 +43,7 @@ namespace Services
 
         public List<MenuResponce> GetMenus()
         {
-            return _db.Menus.Select(menu => menu.ToMenuResponce()).ToList();
+            return _db.Menus.Include(m => m.Dishes).Select(menu => menu.ToMenuResponce()).ToList();
         }
     }
 }

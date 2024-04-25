@@ -1,0 +1,12 @@
+﻿@model MenuResponce
+
+<form class="menu-card" method="GET" action="/add-to-cart?menuID=@Model.MenuId">
+    <h4>@Model.MenuName</h4>
+    <ul>
+        @foreach (Dish dish in Model.Dishes)
+        {
+            <li>@dish.DishName</li>
+        }
+    </ul>
+    <button class="submit-button" name="inStock" value="@Model.InStock">@Model.CalculatePrice()₴</button>
+</form>

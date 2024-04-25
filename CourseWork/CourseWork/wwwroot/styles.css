@@ -11,15 +11,12 @@ main {
     padding: 50px 100px;
 }
 
-a {
+.navbar-top a {
     color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
 }
-
-
-
 
 .navbar-top {
     font-weight: 900;
@@ -59,13 +56,15 @@ a {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-.navbar-bot {
+.index-navbar {
+    display: flex;
+    padding: 20px 30px 35px 30px;
 }
 
 .card-container {
     display: flex;
     justify-content: space-between;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
 }
 
 .dish-card {
@@ -80,6 +79,24 @@ a {
     background-color: #ffd64f;
     border-radius: 25px;
     border: 1px solid black;
+}
+
+.menu-card {
+    height: 180px;
+    width: 155px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    word-wrap: break-word;
+    background-color: #ffd64f;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.menu-card ul {
+    padding: 0;
 }
 
 .submit-button {
