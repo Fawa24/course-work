@@ -12,7 +12,7 @@ namespace Tests
 
         public DishServiceTests()
         {
-            _dishesService = new DishService(Mock.Of<DishDbContext>());
+            _dishesService = new DishesService(Mock.Of<DishDbContext>());
         }
 
         #region Arrange templates

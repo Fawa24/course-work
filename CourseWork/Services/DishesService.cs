@@ -4,11 +4,11 @@ using IServiceContracts.DTO;
 
 namespace Services
 {
-    public class DishService : IDishesService
+    public class DishesService : IDishesService
     {
         private readonly DishDbContext _db;
 
-        public DishService(DishDbContext db)
+        public DishesService(DishDbContext db)
         {
             _db = db;
         }
