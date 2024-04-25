@@ -14,6 +14,29 @@ namespace IServiceContracts.DTO
         public string RestaurantType { get; set; } = null!;
 
         public int DishPrice { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null) return false;
+
+            DishResponce objToCompare = obj as DishResponce;
+
+            if (objToCompare.DishId == this.DishId &&
+                objToCompare.DishName == this.DishName &&
+                objToCompare.DishPrice == this.DishPrice &&
+                objToCompare.DishType == this.DishType &&
+                objToCompare.RestaurantType == this.RestaurantType)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 
     public static class DishExtencion
