@@ -37,12 +37,12 @@ namespace Services
 
         public List<DishResponce> GetDishes()
         {
-            throw new NotImplementedException();
+            return _db.Dishes.Select(dish => dish.ToDishResponce()).ToList();
         }
 
         public List<MenuResponce> GetMenus()
         {
-            throw new NotImplementedException();
+            return _db.Menus.Select(menu => menu.ToMenuResponce()).ToList();
         }
     }
 }
