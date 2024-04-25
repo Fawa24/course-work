@@ -1,4 +1,7 @@
-﻿namespace IServiceContracts.DTO
+﻿using Entities.Entities;
+using System.Runtime.CompilerServices;
+
+namespace IServiceContracts.DTO
 {
     public partial class DishResponce
     {
@@ -11,5 +14,20 @@
         public string RestaurantType { get; set; } = null!;
 
         public int DishPrice { get; set; }
+    }
+
+    public static class DishExtencion
+    {
+        public static DishResponce ToDishResponce(this Dish dish)
+        {
+            return new DishResponce
+            {
+                DishId = dish.DishId,
+                DishName = dish.DishName,
+                DishType = dish.DishType,
+                RestaurantType = dish.RestaurantType,
+                DishPrice = dish.DishPrice
+            };
+        }
     }
 }

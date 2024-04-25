@@ -1,4 +1,5 @@
 ﻿using Entities.Entities;
+using System.Runtime.CompilerServices;
 
 namespace IServiceContracts.DTO
 {
@@ -11,14 +12,19 @@ namespace IServiceContracts.DTO
         public bool InStock { get; set; }
 
         public virtual ICollection<Dish> Dishes { get; set; } = new List<Dish>();
+    }
 
-        public int Price { get; set; }
-
-        public void CalculateThePrice()
+    public static class MenuExtencion
+    {
+        public static MenuResponce ToMenuResponce(this Menu menu)
         {
-            int price = 0;
-            foreach (Dish dish in Dishes) { price = price + dish.DishPrice; }
-            Price = price;
+            return new MenuResponce()
+            {
+                MenuId = menu.MenuId,
+                MenuName = menu.MenuName,
+                InStock = menu.InStock,
+                Dishes = menu.Dishes
+            };
         }
     }
 }
