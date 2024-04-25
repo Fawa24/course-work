@@ -1,0 +1,6 @@
+﻿@model DishResponce
+
+<form class="dish-card" method="POST" action="/add-to-cart?dishID=@Model.DishId">
+    <h4>@Model.DishName</h4>
+    <button class="submit-button" name="inStock" value="@Model.InStock">@Model.DishPrice₴</button>
+</form>

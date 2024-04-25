@@ -1,1 +1,7 @@
 ﻿@model List<DishResponce>
+<div class="card-container">
+    @foreach (DishResponce dish in Model)
+    {
+        @await Html.PartialAsync("_DishCardPartial", dish)
+    }
+</div>
