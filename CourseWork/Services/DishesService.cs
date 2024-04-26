@@ -45,5 +45,15 @@ namespace Services
         {
             return _db.Menus.Include(m => m.Dishes).Select(menu => menu.ToMenuResponce()).ToList();
         }
+
+        public DishResponce GetDishById(Guid id)
+        {
+            return _db.Dishes.First(dish => dish.DishId.Equals(id)).ToDishResponce();
+        }
+
+        public MenuResponce GetMenuById(Guid id)
+        {
+            return _db.Menus.First(dish => dish.MenuId.Equals(id)).ToMenuResponce();
+        }
     }
 }

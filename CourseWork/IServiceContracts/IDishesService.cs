@@ -26,5 +26,17 @@ namespace IServiceContracts
         /// <param name="request">Menu to add</param>
         /// <returns>Menu in the form of MenuResponce with newly generated MenuId</returns>
         MenuResponce AddMenu(MenuAddRequest request);
+        /// <summary>
+        /// Use to get Menu from database by its id 
+        /// </summary>
+        /// <param name="id">Id to search</param>
+        /// <returns>Matches menu object in the form of MenuResponce</returns>
+        MenuResponce GetMenuById(Guid id);
+        /// <summary>
+        /// Use to get Dish from database by its id 
+        /// </summary>
+        /// <param name="id">Id to search</param>
+        /// <returns>Matches dish object in the form of DishResponce</returns>
+        DishResponce GetDishById(Guid id);
     }
 }
