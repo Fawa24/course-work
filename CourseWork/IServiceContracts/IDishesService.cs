@@ -1,4 +1,5 @@
-﻿using IServiceContracts.DTO;
+﻿using CourseWork.Models.EditDishModels;
+using IServiceContracts.DTO;
 
 namespace IServiceContracts
 {
@@ -38,5 +39,12 @@ namespace IServiceContracts
         /// <param name="id">Id to search</param>
         /// <returns>Matches dish object in the form of DishResponce</returns>
         DishResponce GetDishById(Guid id);
+        /// <summary>
+        /// Creates an IDishModel object that is used to create a DishEdit view
+        /// </summary>
+        /// <param name="dishType">Dish type to create</param>
+        /// <param name="restorauntType">Restoraunt dish was created in</param>
+        /// <returns>Dish model object</returns>
+        IDishModel CreateDishModel(string dishType, string restorauntType);
     }
 }
