@@ -1,4 +1,5 @@
-﻿using IServiceContracts;
+﻿using CourseWork.Models.EditDishModels;
+using IServiceContracts;
 using IServiceContracts.DTO;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,15 @@ namespace CourseWork.Controllers
         {
             MenuResponce menu = _dishesService.GetMenuById(menuId);
             return View(menu);
+        }
+
+        [HttpGet]
+        [Route("/edit-dish")]
+        public IActionResult EditDish(Guid dishId, string returnUrl)
+        {
+            DishResponce dish = _dishesService.GetDishById(dishId);
+            IDishModel dishModel = _dishesService.CreateDishModel(dish.DishType, dish.RestaurantType);
+            return View(dishModel);
         }
     }
 }
