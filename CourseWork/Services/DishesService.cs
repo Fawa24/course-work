@@ -58,26 +58,36 @@ namespace Services
             return _db.Menus.First(dish => dish.MenuId.Equals(id)).ToMenuResponce();
         }
 
-        public IDishModel CreateDishModel(string dishTypeAsString, string restorauntTypeAsString)
+        public IDishModel CreateDishModel(string dishType, string restorauntType)
         {
-            Type dishType = Type.GetType(dishTypeAsString);
-            Type restorauntType = Type.GetType(restorauntTypeAsString);
+            IRestoraunt restoraunt;
+            IDishModel dishModel;
 
-            bool dishTypeIsValid = dishType != null && dishType.IsSubclassOf(typeof(IDishModel));
-            bool restorauntTypeIsValid = restorauntType != null && restorauntType.IsSubclassOf(typeof(IRestoraunt));
+            switch (restorauntType)
+            {
+                case "American":
+                    restoraunt = new AmericanRestoraunt();
+                    break;
+                case "Italian":
+                    restoraunt = new ItalianRestoraunt();
+                    break;
+                default:
+                    throw new ArgumentException("Wrong restoraunt type input");
+            }
 
-            if (dishTypeIsValid && restorauntTypeIsValid)
+            switch (dishType)
             {
-                IRestoraunt restoraunt = (IRestoraunt)Activator.CreateInstance(restorauntType);
-                IDishModel dishModel = (IDishModel)Activator.CreateInstance(dishType);
-                dishModel._restoraunt = restoraunt;
-                dishModel.GetIngradients();
-                return dishModel;
+                case "Pizza":
+                    dishModel = new Pizza(restoraunt);
+                    break;
+                case "Lasagna":
+                    dishModel = new Lasagna(restoraunt);
+                    break;
+                default:
+                    throw new ArgumentException("Wrong dish type input");
             }
-            else
-            {
-                throw new ArgumentException("Something went wrong...");
-            }
+
+            return dishModel;
         }
     }
 }
