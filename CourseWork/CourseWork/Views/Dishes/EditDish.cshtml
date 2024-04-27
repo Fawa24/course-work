@@ -1,4 +1,41 @@
 ﻿@model IDishModel
+@using System.Reflection
 
-<p>Dish type = @Model.GetType()</p>
-<p>Restoraunt type = @Model._restoraunt.GetType()</p>
+@{
+    List<InputInfoModel> DisplayInputs()
+    {
+        Type dishType = Model.GetType();
+        List<InputInfoModel> result = new List<InputInfoModel>();
+
+        foreach (PropertyInfo property in dishType.GetProperties())
+        {
+            if (property.ToString() != "CourseWork.Models.EditDishModels.IRestoraunt _restoraunt")
+            {
+                object value = property.GetValue(Model);
+                string ingradientName = value as string;
+                result.Add(new InputInfoModel()
+                {
+                    PropertyName = property.ToString(),
+                    IngradientName = ingradientName
+                });
+            }
+        }
+
+        return result;
+    }
+
+    List<InputInfoModel> values = DisplayInputs();
+}
+
+<div>
+    <form class="edit-dish-form" method="post" action="@Url.Action("AddToCart", "Order")">
+        @foreach (InputInfoModel obj in values)
+        {
+            <div class="ingradient-container">
+                <label for="@obj.PropertyName">@obj.IngradientName</label>
+                <input type="number" id="@obj.PropertyName" name="@obj.PropertyName" min="1" max="3">
+            </div>
+        }
+        <button type="submit">Add to Cart</button>
+    </form>
+</div>

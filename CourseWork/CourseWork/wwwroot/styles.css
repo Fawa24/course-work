@@ -151,3 +151,17 @@ main {
         #feedback-form button:hover {
             background-color: #cc0000;
         }
+    
+    .ingradient-container {
+        display: flex;
+        justify-content: space-between;
+        width: 190px;
+    }
+    
+    .edit-dish-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 135px;
+    }

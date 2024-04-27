@@ -8,10 +8,6 @@
         public string SauseName { get; set; }
         public string FillingName { get; set; }
 
-        public int CheeseAmount { get; set; }
-        public int SauseAmount { get; set; }
-        public int FillingAmount { get; set; }
-
         public Lasagna(IRestoraunt restoraunt)
         { 
             _restoraunt = restoraunt;

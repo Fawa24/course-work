@@ -7,9 +7,6 @@
         public string CheeseName { get; set; }
         public string SauseName { get; set; }
 
-        public int CheeseAmount { get; set; }
-        public int SauseAmount { get; set; }
-
         public Pizza(IRestoraunt restoraunt) 
         {
             _restoraunt = restoraunt;
