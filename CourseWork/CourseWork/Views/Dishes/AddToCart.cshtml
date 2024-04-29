@@ -1,8 +1,6 @@
-﻿@model Dictionary<string, int>
+﻿@model Dictionary<string, string>
 
-<p>Adding is not implemented yet</p>
-
-@foreach (KeyValuePair<string, int> keyValue in Model)
+@foreach (KeyValuePair<string, string> keyValue in Model)
 {
     <div style="display: flex; width: 200px; justify-content: space-between">
         <p>@keyValue.Key: @keyValue.Value</p>

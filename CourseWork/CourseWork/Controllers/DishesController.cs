@@ -1,8 +1,10 @@
-﻿using CourseWork.Models.EditDishModels;
+﻿using CourseWork.Models;
+using CourseWork.Models.EditDishModels;
 using IServiceContracts;
 using IServiceContracts.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace CourseWork.Controllers
 {
@@ -47,22 +49,14 @@ namespace CourseWork.Controllers
         {
             DishResponce dish = _dishesService.GetDishById(dishId);
             IDishModel dishModel = _dishesService.CreateDishModel(dish.DishType, dish.RestaurantType);
-            return View(dishModel);
+            EditDishModel editDishModel = new EditDishModel(dishModel, dish.RestaurantType, dish.DishType);
+            return View(editDishModel);
         }
 
         [HttpPost]
         [Route("/add-to-cart")]
-        public IActionResult AddToCart([FromBody] Dictionary<string, int> dishData)//JObject formData)
+        public IActionResult AddToCart(Dictionary<string, string> dishData) 
         {
-            /*Dictionary<string, int> dishData = new Dictionary<string, int>();
-
-            foreach (JProperty property in formData.Properties())
-            {
-                dishData.Add(property.Name, Convert.ToInt16(formData[property]));
-            }
-
-            HttpContext.Response.ContentType = "application/json";*/
-
             return View(dishData);
         }
     }
