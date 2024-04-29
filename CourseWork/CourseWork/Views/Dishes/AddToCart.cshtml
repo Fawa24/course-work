@@ -1,0 +1,11 @@
+﻿@model Dictionary<string, int>
+
+<p>Adding is not implemented yet</p>
+
+@foreach (KeyValuePair<string, int> keyValue in Model)
+{
+    <div style="display: flex; width: 200px; justify-content: space-between">
+        <p>@keyValue.Key: @keyValue.Value</p>
+    </div>
+}
+

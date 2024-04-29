@@ -10,6 +10,7 @@
         public Pizza(IRestoraunt restoraunt) 
         {
             _restoraunt = restoraunt;
+            GetIngradients();
         }
 
         public void GetIngradients()

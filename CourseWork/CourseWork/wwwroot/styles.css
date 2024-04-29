@@ -156,12 +156,11 @@ main {
         display: flex;
         justify-content: space-between;
         width: 190px;
+        margin-bottom: 20px;
     }
     
     .edit-dish-form {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
-        height: 135px;
     }

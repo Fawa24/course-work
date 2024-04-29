@@ -28,7 +28,7 @@
 }
 
 <div>
-    <form class="edit-dish-form" method="post" action="@Url.Action("AddToCart", "Order")">
+    <form id="edit-dish-form" class="edit-dish-form" method="post" action="@Url.Action("AddToCart", "Dishes")">
         @foreach (InputInfoModel obj in values)
         {
             <div class="ingradient-container">
@@ -36,6 +36,33 @@
                 <input type="number" id="@obj.PropertyName" name="@obj.PropertyName" min="1" max="3">
             </div>
         }
+        <div id="showJson"></div>
         <button type="submit">Add to Cart</button>
     </form>
 </div>
+
+<script>
+    $('#edit-dish-form').submit(function (e) {
+        e.preventDefault();
+
+        var formData = {};
+        $(this).find('input').each(function () {
+            formData[$(this).attr('name')] = $(this).val();
+        });
+
+        $.ajax({
+            url: '@Url.Action("AddToCart", "Dishes")',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(formData),
+            success: function (response) {
+                console.log("Success:", response);
+                alert("Item added to cart successfully!");
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", error);
+                alert("Error occurred while adding item to cart. Please try again.");
+            }
+        });
+    });
+</script>
