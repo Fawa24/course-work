@@ -83,14 +83,18 @@ namespace CourseWork.Controllers
         [Route("/delete-from-cart")]
         public IActionResult DeleteFromCart(Guid CartObjectId)
         {
-            return View();
+            _orderBuilder.DeleteFromCart(CartObjectId);
+            List<CartResponce> cartDishes = _orderBuilder.GetDishesFromCart();
+            return View("MyCart", cartDishes);
         }
 
         [HttpGet]
         [Route("copy-cart-object")]
         public IActionResult CopyCartObject(Guid CartObjectId)
         {
-            return View();
+            _orderBuilder.CloneObject(CartObjectId);
+            List<CartResponce> cartDishes = _orderBuilder.GetDishesFromCart();
+            return View("MyCart", cartDishes);
         }
     }
 }

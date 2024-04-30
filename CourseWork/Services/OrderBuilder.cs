@@ -9,12 +9,24 @@ namespace Services
     {
         private readonly List<CartObject> _cart;
 
+        public bool TakeawayOrder => TakeawayOrder;
+
         public OrderBuilder()
         {
             _cart = new List<CartObject>();
         }
 
-        public bool TakeawayOrder => TakeawayOrder;
+        public Order Build()
+        {
+            Order order = new Order(_cart)
+            { 
+                Price = CalculateOverallPrice(),
+                TakeawayOrder = TakeawayOrder
+            };
+
+            Clear();
+            return order;
+        }
 
         public CartResponce AddToCart(AddDishToCartRequest request)
         {
@@ -23,18 +35,14 @@ namespace Services
             return cartObject.ToCartResponce();
         }
 
-        public Order Build()
+        public int CalculateOverallPrice()
         {
-            return new Order(_cart)
+            int sum = 0;
+            foreach (CartObject cartObject in _cart)
             {
-                Price = CalculatePrice(),
-                TakeawayOrder = TakeawayOrder
-            };
-        }
-
-        public int CalculatePrice()
-        {
-            throw new NotImplementedException();
+                sum = sum + cartObject.CalculatePrice();
+            }
+            return sum;
         }
 
         public List<CartResponce> GetDishesFromCart()
@@ -42,6 +50,30 @@ namespace Services
             return _cart.Select(x => x.ToCartResponce()).ToList();
         }
 
+        public void Clear()
+        {
+            _cart.Clear();
+        }
 
+
+        public bool DeleteFromCart(Guid cartObjectId)
+        {
+            CartObject? cartObject = _cart.FirstOrDefault(obj => obj.CartObjectId == cartObjectId);
+
+            if (cartObject == null) return false;
+            
+            _cart.Remove(cartObject);
+            return true;
+        }
+
+        public CartResponce CloneObject(Guid cartObjectId)
+        {
+            CartObject matchedObject = _cart.First(obj => obj.CartObjectId == cartObjectId);
+
+            CartObject objectCopy = matchedObject.Copy() as CartObject;
+            _cart.Add(objectCopy);
+
+            return objectCopy.ToCartResponce();
+        }
     }
 }

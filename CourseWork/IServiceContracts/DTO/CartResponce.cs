@@ -39,5 +39,15 @@ namespace IServiceContracts.DTO
                 BasePrice = obj.BasePrice
             };
         }
+
+        public static int CalculatePrice(this CartObject obj)
+        {
+            int price = obj.BasePrice;
+            foreach (KeyValuePair<string, int> kvp in obj.Ingradients)
+            {
+                price = price + (kvp.Value - 1) * 3;
+            }
+            return price;
+        }
     }
 }
