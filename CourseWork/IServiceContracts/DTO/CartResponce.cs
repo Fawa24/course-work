@@ -13,6 +13,17 @@ namespace IServiceContracts.DTO
         public string RestorauntType { get; set; } = null!;
         public string DishType { get; set; } = null!;
         public Dictionary<string, int> Ingradients { get; set; } = null!;
+        public int BasePrice { get; set; }
+
+        public int CalculatePrice()
+        {
+            int price = BasePrice;
+            foreach (KeyValuePair<string, int> kvp in Ingradients)
+            {
+                price = price + (kvp.Value - 1) * 3;
+            }
+            return price;
+        }
     }
 
     public static class CartObjectExtension
@@ -24,7 +35,8 @@ namespace IServiceContracts.DTO
                 CartObjectId = obj.CartObjectId,
                 RestorauntType = obj.RestorauntType,
                 DishType = obj.DishType,
-                Ingradients = obj.Ingradients
+                Ingradients = obj.Ingradients,
+                BasePrice = obj.BasePrice
             };
         }
     }

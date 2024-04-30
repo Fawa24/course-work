@@ -14,6 +14,8 @@ namespace Services
             _cart = new List<CartObject>();
         }
 
+        public bool TakeawayOrder => TakeawayOrder;
+
         public CartResponce AddToCart(AddDishToCartRequest request)
         {
             CartObject cartObject = request.ToCartObject();
@@ -21,9 +23,25 @@ namespace Services
             return cartObject.ToCartResponce();
         }
 
+        public Order Build()
+        {
+            return new Order(_cart)
+            {
+                Price = CalculatePrice(),
+                TakeawayOrder = TakeawayOrder
+            };
+        }
+
+        public int CalculatePrice()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<CartResponce> GetDishesFromCart()
         {
             return _cart.Select(x => x.ToCartResponce()).ToList();
         }
+
+
     }
 }

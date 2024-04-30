@@ -1,0 +1,13 @@
+﻿@model CartResponce
+
+<div class="cart-object">
+    <div class="left-cart-object">
+        <p>@Model.RestorauntType @Model.DishType</p>
+    </div>
+    <div class="right-cart-object">
+        <a href="@Url.Action("EditCartObject", "Dishes", Model.CartObjectId)">Edit</a>
+        <a href="@Url.Action("DeleteFromCart", "Dishes", Model.CartObjectId)">Delete</a>
+        <a href="@Url.Action("CopyCartObject", "Dishes", Model.CartObjectId)">Copy</a>
+        <p>@Model.CalculatePrice()$</p>
+    </div>
+</div>

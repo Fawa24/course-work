@@ -46,5 +46,12 @@ namespace IServiceContracts
         /// <param name="restorauntType">Restoraunt dish was created in</param>
         /// <returns>Dish model object</returns>
         IDishModel CreateDishModel(string dishType, string restorauntType);
+        /// <summary>
+        /// Returns stock price for a product
+        /// </summary>
+        /// <param name="restorauntType">Restoraunt type</param>
+        /// <param name="dishType">Dish type</param>
+        /// <returns>Price of the matching product</returns>
+        int GetBasePrice(string restorauntType, string dishType);
     }
 }

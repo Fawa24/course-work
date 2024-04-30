@@ -1,0 +1,7 @@
+﻿@model List<CartResponce>
+
+<div class="cart-container">
+    @foreach(CartResponce obj in Model) {
+        @await Html.PartialAsync("_CartObjectDisplayerPartial", obj)
+    }
+</div>

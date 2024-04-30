@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Entities.Entities;
+﻿namespace Entities.Entities;
 
 public partial class UserQuestion
 {

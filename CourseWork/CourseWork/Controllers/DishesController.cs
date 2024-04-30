@@ -1,20 +1,21 @@
 ﻿using CourseWork.Models;
 using CourseWork.Models.EditDishModels;
+using Entities;
 using IServiceContracts;
 using IServiceContracts.DTO;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using System.Diagnostics;
 
 namespace CourseWork.Controllers
 {
     public class DishesController : Controller
     {
         private readonly IDishesService _dishesService;
+        private readonly IOrderBuilder _orderBuilder;
 
-        public DishesController(IDishesService dishesService)
+        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder)
         {
             _dishesService = dishesService;
+            _orderBuilder = orderBuilder;
         }
 
         [HttpGet]
@@ -57,7 +58,38 @@ namespace CourseWork.Controllers
         [Route("/add-to-cart")]
         public IActionResult AddToCart(Dictionary<string, string> dishData) 
         {
-            AddDishToCartRequest addDishToCartRequest = dishData.ToAddDishToCartRequest();
+            int basePrice = _dishesService.GetBasePrice(dishData["RestorauntType"], dishData["DishType"]);
+            AddDishToCartRequest addDishToCartRequest = dishData.ToAddDishToCartRequest(basePrice);
+            _orderBuilder.AddToCart(addDishToCartRequest);
+            return View();
+        }
+
+        [HttpGet]
+        [Route("/my-cart")]
+        public IActionResult MyCart()
+        {
+            List<CartResponce> cartDishes = _orderBuilder.GetDishesFromCart();
+            return View(cartDishes);
+        }
+
+        [HttpGet]
+        [Route("/edit-cart-object")]
+        public IActionResult EditCartObject(Guid CartObjectId)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("/delete-from-cart")]
+        public IActionResult DeleteFromCart(Guid CartObjectId)
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("copy-cart-object")]
+        public IActionResult CopyCartObject(Guid CartObjectId)
+        {
             return View();
         }
     }

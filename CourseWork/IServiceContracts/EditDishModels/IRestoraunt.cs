@@ -2,7 +2,7 @@
 {
     public interface IRestoraunt
     {
-        string CheeseName { get; } 
+        string CheeseName { get; }
         string SauceName { get; }
         string FillingName { get; }
     }

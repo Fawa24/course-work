@@ -10,6 +10,7 @@ builder.Services.AddDbContext<DishDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddSingleton<IOrderBuilder, OrderBuilder>();
 var app = builder.Build();
 
 app.UseStaticFiles();

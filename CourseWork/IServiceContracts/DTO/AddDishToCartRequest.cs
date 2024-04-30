@@ -13,12 +13,14 @@ namespace IServiceContracts.DTO
         public string RestorauntType { get; set; }
         public string DishType { get; set; }
         public Dictionary<string, int> Ingradients { get; set; }
+        public int BasePrice { get; set; }
 
-        public AddDishToCartRequest(string restorauntType, string dishType, Dictionary<string, int> ingradients) 
+        public AddDishToCartRequest(string restorauntType, string dishType, Dictionary<string, int> ingradients, int price) 
         { 
             RestorauntType = restorauntType;
             DishType = dishType;
             Ingradients = ingradients;
+            BasePrice = price;
         }
 
         public CartObject ToCartObject()
@@ -28,14 +30,15 @@ namespace IServiceContracts.DTO
                 CartObjectId = Guid.NewGuid(),
                 RestorauntType = RestorauntType,
                 DishType = DishType,
-                Ingradients = Ingradients
+                Ingradients = Ingradients,
+                BasePrice = BasePrice
             };
         }
     }
 
     public static class DictionaryExtension
     { 
-        public static AddDishToCartRequest ToAddDishToCartRequest(this Dictionary<string, string> dictionary)
+        public static AddDishToCartRequest ToAddDishToCartRequest(this Dictionary<string, string> dictionary, int basePrice)
         {
             string restorauntType = dictionary["RestorauntType"];
             dictionary.Remove("RestorauntType");
@@ -50,7 +53,7 @@ namespace IServiceContracts.DTO
                 ingradients.Add(key, value);
             }
 
-            return new AddDishToCartRequest(restorauntType, dishType, ingradients);
+            return new AddDishToCartRequest(restorauntType, dishType, ingradients, basePrice);
         }
     }
 }

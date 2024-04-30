@@ -89,5 +89,11 @@ namespace Services
 
             return dishModel;
         }
+
+        public int GetBasePrice(string restorauntType, string dishType)
+        {
+            Dish dish = _db.Dishes.First(dish => dish.RestaurantType == restorauntType && dish.DishType == dishType);
+            return dish.DishPrice;
+        }
     }
 }
