@@ -29,6 +29,8 @@
 
 <div>
     <form id="edit-dish-form" class="edit-dish-form" method="post" action="@Url.Action("AddToCart", "Dishes")">
+        <input type="hidden" name="DishType" value="@Model.DishType" />
+        <input type="hidden" name="RestorauntType" value="@Model.RestorauntType" />
         @foreach (InputInfoModel obj in values)
         {
             <div class="ingradient-container">
@@ -36,8 +38,6 @@
                 <input type="number" id="@obj.PropertyName.Replace("System.String ", "")" name="@obj.PropertyName.Replace("System.String ", "")" min="1" max="3" value="1">
             </div>
         }
-        <input type="hidden" name="DishType" value="@Model.DishType" />
-        <input type="hidden" name="RestorauntType" value="@Model.RestorauntType" />
         <button type="submit">Add to Cart</button>
     </form>
 </div>

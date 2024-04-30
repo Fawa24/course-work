@@ -1,9 +1,4 @@
-﻿@model Dictionary<string, string>
-
-@foreach (KeyValuePair<string, string> keyValue in Model)
-{
-    <div style="display: flex; width: 200px; justify-content: space-between">
-        <p>@keyValue.Key: @keyValue.Value</p>
-    </div>
-}
-
+﻿<form method="get" action="/dishes">
+    <p>Added succesfully!</p>
+    <button type="submit">Back to dishes page</button>
+</form>

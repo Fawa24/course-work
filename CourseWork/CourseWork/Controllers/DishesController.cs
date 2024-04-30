@@ -57,7 +57,8 @@ namespace CourseWork.Controllers
         [Route("/add-to-cart")]
         public IActionResult AddToCart(Dictionary<string, string> dishData) 
         {
-            return View(dishData);
+            AddDishToCartRequest addDishToCartRequest = dishData.ToAddDishToCartRequest();
+            return View();
         }
     }
 }
