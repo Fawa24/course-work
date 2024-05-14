@@ -6,7 +6,6 @@
     </div>
     <div class="right-cart-object">
         <a asp-controller="Dishes" asp-action="CopyCartObject" asp-route-CartObjectId="@Model.CartObjectId">Copy</a>
-        <a asp-controller="Dishes" asp-action="EditCartObject" asp-route-CartObjectId="@Model.CartObjectId">Edit</a>
         <a asp-controller="Dishes" asp-action="DeleteFromCart" asp-route-CartObjectId="@Model.CartObjectId">Delete</a>
         <p>@Model.CalculatePrice()$</p>
     </div>

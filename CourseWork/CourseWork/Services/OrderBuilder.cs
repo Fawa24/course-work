@@ -20,7 +20,6 @@ namespace Services
                 Price = CalculateOverallPrice()
             };
 
-            Clear();
             return order;
         }
 

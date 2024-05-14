@@ -1,8 +1,8 @@
 ﻿@model List<CartResponce>
 
-<form class="cart-container" >
+<div class="cart-container">
     @foreach(CartResponce obj in Model) {
         @await Html.PartialAsync("_CartObjectDisplayerPartial", obj)
     }
-    
-</form>
+    <a asp-controller="Dishes" asp-action="PlacingTheOrder">Buy</a>
+</div>

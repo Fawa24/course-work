@@ -1,0 +1,28 @@
+﻿@model Order
+
+<div class="container">
+    @foreach(CartObject cartObject in Model._cart)
+    {
+        <div class="cart-object">
+            <div class="left-cart-object">
+                <p>@cartObject.RestorauntType @cartObject.DishType</p>
+            </div>
+            <div class="right-cart-object">
+                <p>@cartObject.CalculatePrice()$</p>
+            </div>
+        </div>
+    }
+</div>
+
+<h4>Total price: @Model.Price₴</h4>
+
+<p style="margin-top: 10px;">Choose a payment method</p>
+
+<form method="get" action="/confirm-order">
+    <select name="paymentMethod">
+        <option value="Terminal">Card using terminal</option>
+        <option value="Online">Card online</option>
+        <option value="Cash">At the checkout </option>
+    </select>
+    <button type="submit">Confirm</button>
+</form>

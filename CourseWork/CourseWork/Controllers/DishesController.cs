@@ -1,5 +1,6 @@
 ﻿using CourseWork.Models;
 using CourseWork.Models.EditDishModels;
+using Entities;
 using IServiceContracts;
 using IServiceContracts.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -55,13 +56,6 @@ namespace CourseWork.Controllers
         }
 
         [HttpGet]
-        [Route("/edit-cart-object")]
-        public IActionResult EditCartObject(Guid CartObjectId)
-        {
-            return View();
-        }
-
-        [HttpGet]
         [Route("/delete-from-cart")]
         public IActionResult DeleteFromCart(Guid CartObjectId)
         {
@@ -77,6 +71,21 @@ namespace CourseWork.Controllers
             _orderBuilder.CloneObject(CartObjectId);
             List<CartResponce> cartDishes = _orderBuilder.GetDishesFromCart();
             return View("MyCart", cartDishes);
+        }
+
+        [HttpGet]
+        [Route("placing-order")]
+        public IActionResult PlacingTheOrder()
+        {
+            Order order = _orderBuilder.Build();
+            return View(order);
+        }
+
+        [HttpGet]
+        [Route("confirm-order")]
+        public IActionResult ConfirmOrder(string paymentMethod) 
+        {
+            return View("ConfirmOrder", paymentMethod);
         }
     }
 }
