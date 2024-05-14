@@ -83,7 +83,7 @@ namespace CourseWork.Controllers
             Order order = _orderBuilder.Build(paymentMethod);
 
             string path = order.GetPaymentViewPath();
-            return View(order.GetPaymentViewPath());
+            return View(order.GetPaymentViewPath(), order);
         }
     }
 }

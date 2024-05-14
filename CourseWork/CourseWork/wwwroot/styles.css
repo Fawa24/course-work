@@ -144,3 +144,15 @@ main {
     width: 170px;
 }
 
+.check {
+    padding: 10px;
+    border-radius: 10px;
+    border: black solid 1px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* .form {
+    display: flex;
+    justify-content: space-between;
+} */

@@ -1,0 +1,26 @@
+﻿@model Order
+@{
+    int GetOrderNumber()
+    {
+        return new Random().Next(510, 600);
+    }
+}
+
+<div class="check">
+    <div class="cart-container">
+        <h2 style="margin-left: 10px; margin-bottom: 15px;">Order number: @GetOrderNumber()</h2>
+        @foreach (CartObject obj in Model._cart)
+        {
+            CartResponce responce = obj.ToCartResponce();
+            <div class="cart-object">
+                <div class="left-cart-object">
+                    <p>@obj.RestorauntType @obj.DishType</p>
+                </div>
+                <div class="right-cart-object" style="width: 0; margin-right: 35px;">
+                    <p>@obj.CalculatePrice()$</p>
+                </div>
+            </div>
+        }
+        <h4 style="margin-left: 225px; margin-top: 15px; margin-bottom: 4px;">Total Price: @Model.Price</h4>
+    </div>
+</div>

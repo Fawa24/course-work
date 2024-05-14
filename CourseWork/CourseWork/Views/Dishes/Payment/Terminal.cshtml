@@ -1,1 +1,8 @@
-﻿<p>This is terminal payment</p>
+﻿@model Order
+@await Html.PartialAsync("_CheckPartial", Model)
+
+<form method="post" action="/pay-the-order" class="form">
+    <label for="PIN">PIN code: </label>
+    <input style="width: 22px; align-content: center;" placeholder="PIN" type="password" name="PIN" maxlength="4" />
+    <button type="submit">Pay</button>
+</form>

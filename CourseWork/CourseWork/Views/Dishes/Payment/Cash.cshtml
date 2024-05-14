@@ -1,1 +1,8 @@
-﻿<p>This is cash payment</p>
+﻿@model Order
+
+@await Html.PartialAsync("_CheckPartial", Model)
+
+<p style="margin-top: 20px;">Go to the checkout to pay the order</p>
+<form method="post" action="/pay-the-order" class="form">
+    <button type="submit">Pay</button>
+</form>
