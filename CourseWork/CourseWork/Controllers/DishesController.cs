@@ -82,7 +82,7 @@ namespace CourseWork.Controllers
         }
 
         [HttpGet]
-        [Route("confirm-order")]
+        [Route("pay-the-order")]
         public IActionResult ConfirmOrder(string paymentMethod) 
         {
             return View("ConfirmOrder", paymentMethod);
