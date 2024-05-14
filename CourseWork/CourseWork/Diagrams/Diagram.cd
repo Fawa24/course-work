@@ -48,6 +48,29 @@
       <Property Name="DishModel" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="Entities.CartObject">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAgAAgAAAEIAAAAAAAAAAgA=</HashCode>
+      <FileName>Entities\CartObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.OrderBuilder">
+    <Position X="21.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAEAAAAQAAAAAAAIAAAAAgAAAEAAAAAhAACA=</HashCode>
+      <FileName>Services\OrderBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Entities.Order">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="CourseWork.Models.EditDishModels.IRestoraunt">
     <Position X="10.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
@@ -60,6 +83,23 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
       <FileName>IServiceContracts\EditDishModels\IDishModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_restoraunt" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="Entities.ICartObjectPrototype">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\IPrototype.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IServiceContracts.IOrderBuilder">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAQAAAAAAAIAAAAAgAAAEAAAAAhAACA=</HashCode>
+      <FileName>IServiceContracts\IOrderBuilder.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

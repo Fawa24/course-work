@@ -15,8 +15,6 @@ public partial class DishDbContext : DbContext
 
     public virtual DbSet<Dish> Dishes { get; set; }
 
-    public virtual DbSet<Menu> Menus { get; set; }
-
     public virtual DbSet<UserQuestion> UserQuestions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,39 +40,6 @@ public partial class DishDbContext : DbContext
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("restaurant_type");
-        });
-
-        modelBuilder.Entity<Menu>(entity =>
-        {
-            entity.HasKey(e => e.MenuId).HasName("PK__Menus__4CA0FADC2DF4812C");
-
-            entity.Property(e => e.MenuId)
-                .HasDefaultValueSql("(newid())")
-                .HasColumnName("menu_id");
-            entity.Property(e => e.InStock).HasColumnName("in_stock");
-            entity.Property(e => e.MenuName)
-                .HasMaxLength(30)
-                .IsUnicode(false)
-                .HasColumnName("menu_name");
-
-            entity.HasMany(d => d.Dishes).WithMany(p => p.Menus)
-                .UsingEntity<Dictionary<string, object>>(
-                    "MenuDish",
-                    r => r.HasOne<Dish>().WithMany()
-                        .HasForeignKey("DishId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__MenuDishe__dish___47DBAE45"),
-                    l => l.HasOne<Menu>().WithMany()
-                        .HasForeignKey("MenuId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__MenuDishe__menu___46E78A0C"),
-                    j =>
-                    {
-                        j.HasKey("MenuId", "DishId").HasName("PK__MenuDish__C5524E13B703B644");
-                        j.ToTable("MenuDishes");
-                        j.IndexerProperty<Guid>("MenuId").HasColumnName("menu_id");
-                        j.IndexerProperty<Guid>("DishId").HasColumnName("dish_id");
-                    });
         });
 
         modelBuilder.Entity<UserQuestion>(entity =>

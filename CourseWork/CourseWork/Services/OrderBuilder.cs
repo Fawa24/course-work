@@ -8,8 +8,6 @@ namespace Services
     {
         private readonly List<CartObject> _cart;
 
-        public bool TakeawayOrder => TakeawayOrder;
-
         public OrderBuilder()
         {
             _cart = new List<CartObject>();
@@ -19,8 +17,7 @@ namespace Services
         {
             Order order = new Order(_cart)
             { 
-                Price = CalculateOverallPrice(),
-                TakeawayOrder = TakeawayOrder
+                Price = CalculateOverallPrice()
             };
 
             Clear();
@@ -41,7 +38,7 @@ namespace Services
             {
                 sum = sum + cartObject.CalculatePrice();
             }
-            return sum;
+            return sum; 
         }
 
         public List<CartResponce> GetDishesFromCart()

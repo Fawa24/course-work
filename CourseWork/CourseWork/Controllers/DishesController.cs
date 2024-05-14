@@ -27,23 +27,6 @@ namespace CourseWork.Controllers
         }
 
         [HttpGet]
-        [Route("/menus")]
-        public IActionResult Menus()
-        {
-            List<MenuResponce> menuResponces = _dishesService.GetMenus();
-            MenuResponce firstMenu = menuResponces.First();
-            return View(menuResponces);
-        }
-
-        [HttpGet]
-        [Route("/edit-menu")]
-        public IActionResult EditMenu(Guid menuId)
-        {
-            MenuResponce menu = _dishesService.GetMenuById(menuId);
-            return View(menu);
-        }
-
-        [HttpGet]
         [Route("/edit-dish")]
         public IActionResult EditDish(Guid dishId, string returnUrl)
         {

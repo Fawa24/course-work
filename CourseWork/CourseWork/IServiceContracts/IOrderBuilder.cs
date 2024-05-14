@@ -6,10 +6,6 @@ namespace IServiceContracts
     public interface IOrderBuilder
     {
         /// <summary>
-        /// Takeaway or not
-        /// </summary>
-        bool TakeawayOrder { get; }
-        /// <summary>
         /// Use to get all the dishes from the cart
         /// </summary>
         /// <returns>All dishes from the cart</returns>

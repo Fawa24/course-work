@@ -22,11 +22,6 @@ namespace Tests
             return new DishAddRequest() { DishName = "Some name", DishType = "Some type", DishPrice = 0, InStock = false, RestaurantType = "Some type" };
         }
 
-        MenuAddRequest GetMenuAddRequest()
-        {
-            return new MenuAddRequest() { MenuName = "Some name", Dishes = new List<Dish>(), InStock = false };
-        }
-
         #endregion
 
         #region GetDishes
@@ -49,30 +44,6 @@ namespace Tests
             List<DishResponce> listFromGetDishes = _dishesService.GetDishes();
 
             Assert.Contains(dishResponce, listFromGetDishes);
-        }
-
-        #endregion
-
-        #region GetMenus
-
-        //If any menu has not be added before, GetMenus should return an empty list
-        [Fact]
-        public void GetMenus_EmptyList()
-        {
-            Assert.Empty(_dishesService.GetMenus());
-        }
-
-        //If there has been any menu or menus added before, it should return the list of that menus
-        [Fact]
-        public void GetMenus_NonEmptyList()
-        {
-            //Arrange
-            MenuAddRequest menuAddRequest = GetMenuAddRequest();
-            MenuResponce menuResponce = _dishesService.AddMenu(menuAddRequest);
-
-            List<MenuResponce> listFromGetMenus = _dishesService.GetMenus();
-
-            Assert.Contains(menuResponce, listFromGetMenus);
         }
 
         #endregion

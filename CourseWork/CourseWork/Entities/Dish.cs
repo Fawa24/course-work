@@ -13,6 +13,4 @@ public partial class Dish
     public int DishPrice { get; set; }
 
     public bool InStock { get; set; }
-
-    public virtual ICollection<Menu> Menus { get; set; } = new List<Menu>();
 }
