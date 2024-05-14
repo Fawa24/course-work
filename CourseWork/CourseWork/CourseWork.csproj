@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="IServiceContracts\" />
+    <Folder Include="Diagrams\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

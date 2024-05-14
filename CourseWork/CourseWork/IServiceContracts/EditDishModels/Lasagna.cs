@@ -9,11 +9,11 @@
         public string FillingName { get; set; }
 
         public Lasagna(IRestoraunt restoraunt)
-        { 
+        {
             _restoraunt = restoraunt;
             GetIngradients();
         }
-
+            
         public void GetIngradients()
         {
             CheeseName = _restoraunt.CheeseName;

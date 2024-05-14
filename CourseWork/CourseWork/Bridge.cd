@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CourseWork.Models.EditDishModels.AmericanRestoraunt" BaseTypeListCollapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAACAAAAAAAIAA=</HashCode>
+      <FileName>IServiceContracts\EditDishModels\AmericanRestoraunt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CourseWork.Models.EditDishModels.ItalianRestoraunt" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAACAAAAAAAIAA=</HashCode>
+      <FileName>IServiceContracts\EditDishModels\ItalianRestoraunt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CourseWork.Models.EditDishModels.Lasagna" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAACgAAIAAAIAA=</HashCode>
+      <FileName>IServiceContracts\EditDishModels\Lasagna.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_restoraunt" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CourseWork.Models.EditDishModels.Pizza" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAACgAAIAAAAAA=</HashCode>
+      <FileName>IServiceContracts\EditDishModels\Pizza.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_restoraunt" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CourseWork.Models.EditDishModel">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\EditDishModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DishModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="CourseWork.Models.EditDishModels.IRestoraunt">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAACAAAAAAAIAA=</HashCode>
+      <FileName>IServiceContracts\EditDishModels\IRestoraunt.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CourseWork.Models.EditDishModels.IDishModel">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <FileName>IServiceContracts\EditDishModels\IDishModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

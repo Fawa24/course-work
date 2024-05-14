@@ -7,7 +7,7 @@
         public string CheeseName { get; set; }
         public string SauseName { get; set; }
 
-        public Pizza(IRestoraunt restoraunt) 
+        public Pizza(IRestoraunt restoraunt)
         {
             _restoraunt = restoraunt;
             GetIngradients();
