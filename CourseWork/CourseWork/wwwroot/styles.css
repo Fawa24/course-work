@@ -30,7 +30,7 @@ main {
 .navtop-left {
     display: flex;
     justify-content: space-between;
-    width: 325px;
+    width: 425px;
 }
 
 .navtop-right {
