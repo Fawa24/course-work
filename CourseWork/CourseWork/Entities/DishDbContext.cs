@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Entities.Entities;
+namespace Entities;
 
 public partial class DishDbContext : DbContext
 {

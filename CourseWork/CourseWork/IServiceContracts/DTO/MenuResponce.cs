@@ -1,5 +1,4 @@
-﻿using Entities.Entities;
-using System.Runtime.CompilerServices;
+﻿using Entities;
 
 namespace IServiceContracts.DTO
 {

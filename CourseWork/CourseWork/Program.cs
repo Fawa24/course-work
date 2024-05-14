@@ -1,4 +1,4 @@
-using Entities.Entities;
+using Entities;
 using IServiceContracts;
 using Microsoft.EntityFrameworkCore;
 using Services;

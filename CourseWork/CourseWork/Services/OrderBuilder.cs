@@ -1,5 +1,4 @@
 ﻿using Entities;
-using Entities.Entities;
 using IServiceContracts;
 using IServiceContracts.DTO;
 
@@ -54,7 +53,6 @@ namespace Services
         {
             _cart.Clear();
         }
-
 
         public bool DeleteFromCart(Guid cartObjectId)
         {

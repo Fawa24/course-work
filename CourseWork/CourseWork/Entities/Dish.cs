@@ -1,4 +1,4 @@
-﻿namespace Entities.Entities;
+﻿namespace Entities;
 
 public partial class Dish
 {
