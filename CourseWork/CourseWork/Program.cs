@@ -1,3 +1,5 @@
+using CourseWork.IServiceContracts;
+using CourseWork.Services;
 using Entities;
 using IServiceContracts;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +13,7 @@ builder.Services.AddDbContext<DishDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddSingleton<IOrderBuilder, OrderBuilder>();
+builder.Services.AddSingleton<IPaymentService, PaymentService>();
 var app = builder.Build();
 
 app.UseStaticFiles();

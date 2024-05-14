@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using CourseWork.IServiceContracts;
+using Entities;
 using IServiceContracts;
 using IServiceContracts.DTO;
 
@@ -8,16 +9,20 @@ namespace Services
     {
         private readonly List<CartObject> _cart;
 
+        public Order Order { get; }
+        bool isBuiltProperly = false;
+
         public OrderBuilder()
         {
             _cart = new List<CartObject>();
         }
 
-        public Order Build()
+        public Order Build(string paymentMethod)
         {
             Order order = new Order(_cart)
-            { 
-                Price = CalculateOverallPrice()
+            {
+                Price = CalculateOverallPrice(),
+                paymentStrategy = IPaymentService.CreatePaymentStrategy(paymentMethod)
             };
 
             return order;

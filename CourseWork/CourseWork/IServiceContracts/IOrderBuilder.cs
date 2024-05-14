@@ -32,7 +32,7 @@ namespace IServiceContracts
         /// Builds the Order object based on its configuration
         /// </summary>
         /// <returns>Newly build Order object</returns>
-        Order Build();
+        Order Build(string paymentMethod);
         /// <summary>
         /// Calculates the overall price of the order
         /// </summary>

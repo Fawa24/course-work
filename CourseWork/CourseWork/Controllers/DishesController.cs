@@ -1,4 +1,5 @@
-﻿using CourseWork.Models;
+﻿using CourseWork.IServiceContracts;
+using CourseWork.Models;
 using CourseWork.Models.EditDishModels;
 using Entities;
 using IServiceContracts;
@@ -11,11 +12,13 @@ namespace CourseWork.Controllers
     {
         private readonly IDishesService _dishesService;
         private readonly IOrderBuilder _orderBuilder;
+        private readonly IPaymentService _paymentService;
 
-        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder)
+        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder, IPaymentService paymentService)
         {
             _dishesService = dishesService;
             _orderBuilder = orderBuilder;
+            _paymentService = paymentService;
         }
 
         [HttpGet]
@@ -74,18 +77,13 @@ namespace CourseWork.Controllers
         }
 
         [HttpGet]
-        [Route("placing-order")]
-        public IActionResult PlacingTheOrder()
-        {
-            Order order = _orderBuilder.Build();
-            return View(order);
-        }
-
-        [HttpGet]
         [Route("pay-the-order")]
         public IActionResult ConfirmOrder(string paymentMethod) 
         {
-            return View("ConfirmOrder", paymentMethod);
+            Order order = _orderBuilder.Build(paymentMethod);
+
+            string path = order.GetPaymentViewPath();
+            return View(order.GetPaymentViewPath());
         }
     }
 }

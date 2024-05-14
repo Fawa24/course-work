@@ -1,8 +1,31 @@
 ﻿@model List<CartResponce>
+@{
+    int CalculatePrice()
+    {
+        int price = 0;
+        foreach (CartResponce dish in Model)
+        {
+            price = price + dish.CalculatePrice();
+        }
+        return price;
+    }
+}
 
 <div class="cart-container">
     @foreach(CartResponce obj in Model) {
         @await Html.PartialAsync("_CartObjectDisplayerPartial", obj)
     }
-    <a asp-controller="Dishes" asp-action="PlacingTheOrder">Buy</a>
 </div>
+
+<h4>Total price: @CalculatePrice()</h4>
+
+<p style="margin-top: 10px;">Choose a payment method</p>
+
+<form method="get" action="/pay-the-order">
+    <select name="paymentMethod">
+        <option value="Terminal">Card using terminal</option>
+        <option value="Online">Card online</option>
+        <option value="Cash">At the checkout </option>
+    </select>
+    <button type="submit">Confirm</button>
+</form>
