@@ -59,13 +59,13 @@
   <Class Name="Services.OrderBuilder">
     <Position X="18.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAEAAAAQAAAAAAAKAAAAAgAAAEAAAAAhAACA=</HashCode>
+      <HashCode>AAEAAAAAAEAAAAQAAAAAAAIAAAAAgAAAEAAAAAhAACA=</HashCode>
       <FileName>Services\OrderBuilder.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Entities.Order">
-    <Position X="21" Y="2" Width="1.5" />
+    <Position X="21" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAUAAAAAAAAAAgAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Entities\Order.cs</FileName>
@@ -75,32 +75,91 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="CourseWork.IServiceContracts.Payment.CashPaymentStrategy">
-    <Position X="22.75" Y="5" Width="1.5" />
+    <Position X="22.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IServiceContracts\Payment\CashPaymentStrategy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.IServiceContracts.Payment.OnlinePaymentStrategy">
-    <Position X="25" Y="5" Width="1.5" />
+    <Position X="25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IServiceContracts\Payment\OnlinePaymentStrategy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.IServiceContracts.Payment.PaymentStrategy">
-    <Position X="25" Y="2" Width="1.5" />
+    <Position X="25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQEBA=</HashCode>
       <FileName>IServiceContracts\Payment\PaymentStrategy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CourseWork.IServiceContracts.Payment.TerminalPaymentStrategy">
-    <Position X="27.25" Y="5" Width="1.5" />
+    <Position X="27.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IServiceContracts\Payment\TerminalPaymentStrategy.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Cooking.CookingOrderState">
+    <Position X="21.75" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Cooking\CookingOrderState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Cooking.OrderStateManager">
+    <Position X="31" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAABAAAAAAgAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Cooking\OrderStateManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="state" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Cooking.PackingOrderState">
+    <Position X="28.25" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Cooking\PackingOrderState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Cooking.PreparingOrderState">
+    <Position X="24" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Cooking\PreparingOrderState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Cooking.ReadyOrderState">
+    <Position X="26.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Cooking\ReadyOrderState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Cooking.State">
+    <Position X="25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>IServiceContracts\Cooking\State.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="NextState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseWork.Services.CookingService">
+    <Position X="31" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Services\CookingService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_stateManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="CourseWork.Models.EditDishModels.IRestoraunt">
     <Position X="10.75" Y="1.25" Width="1.5" />
@@ -123,7 +182,7 @@
     <Position X="16" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\IPrototype.cs</FileName>
+      <FileName>Entities\ICartObjectPrototype.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="IServiceContracts.IOrderBuilder">

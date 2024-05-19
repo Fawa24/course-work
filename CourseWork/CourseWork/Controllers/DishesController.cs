@@ -13,12 +13,14 @@ namespace CourseWork.Controllers
         private readonly IDishesService _dishesService;
         private readonly IOrderBuilder _orderBuilder;
         private readonly IPaymentService _paymentService;
+        private readonly ICookingService _cookingService;
 
-        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder, IPaymentService paymentService)
+        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder, IPaymentService paymentService, ICookingService cookingService)
         {
             _dishesService = dishesService;
             _orderBuilder = orderBuilder;
             _paymentService = paymentService;
+            _cookingService = cookingService;
         }
 
         [HttpGet]
@@ -84,6 +86,30 @@ namespace CourseWork.Controllers
 
             string path = order.GetPaymentViewPath();
             return View(order.GetPaymentViewPath(), order);
+        }
+
+        [HttpPost]
+        [Route("pay-the-order")]
+        public IActionResult StartCooking()
+        {
+            Task.Run(async () => _cookingService.Cook());
+            _orderBuilder.Clear();
+            return View();
+        }
+
+        [HttpGet]
+        [Route("order-tracker")]
+        public IActionResult OrderTracker()
+        {
+            return View("OrderTracker", _cookingService.GetState());
+        }
+
+        [HttpGet]
+        [Route("get-the-order")]
+        public IActionResult GetTheOrder()
+        {
+            _cookingService.StopCooking();
+            return View();
         }
     }
 }

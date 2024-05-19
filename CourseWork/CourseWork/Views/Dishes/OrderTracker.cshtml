@@ -1,0 +1,12 @@
+﻿@model string
+
+<p>@Model</p>
+
+<a href="order-tracker">Reload</a>
+
+@if (Model == "Order ready!")
+{
+    <form method="get" action="/get-the-order">
+        <button type="submit">Get the order</button>
+    </form>
+}

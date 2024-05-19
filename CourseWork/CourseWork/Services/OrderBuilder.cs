@@ -9,8 +9,7 @@ namespace Services
     {
         private readonly List<CartObject> _cart;
 
-        public Order Order { get; }
-        bool isBuiltProperly = false;
+        public Order Order { get; set; }
 
         public OrderBuilder()
         {
@@ -53,6 +52,7 @@ namespace Services
         public void Clear()
         {
             _cart.Clear();
+            Order = null;
         }
 
         public bool DeleteFromCart(Guid cartObjectId)
