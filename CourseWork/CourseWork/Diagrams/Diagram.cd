@@ -56,14 +56,6 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Services.OrderBuilder">
-    <Position X="18.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAEAAAAQAAAAAAAIAAAAAgAAAEAAAAAhAACA=</HashCode>
-      <FileName>Services\OrderBuilder.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Entities.Order">
     <Position X="21" Y="1.5" Width="1.5" />
     <TypeIdentifier>
@@ -159,6 +151,14 @@
     <ShowAsAssociation>
       <Field Name="_stateManager" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Services.OrderBuilder">
+    <Position X="18.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAEAAAAQAAAAAAAIAAAAAgAAAEAAAAAhAACA=</HashCode>
+      <FileName>Services\OrderBuilder.cs</FileName>
+    </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="CourseWork.Models.EditDishModels.IRestoraunt">

@@ -65,7 +65,8 @@ namespace Services
             return true;
         }
 
-        public CartResponce CloneObject(Guid cartObjectId)
+		// TODO: Rewrite using ICartResponcePrototype as a return type
+		public CartResponce CloneObject(Guid cartObjectId)
         {
             CartObject matchedObject = _cart.First(obj => obj.CartObjectId == cartObjectId);
 

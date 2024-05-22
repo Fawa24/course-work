@@ -25,7 +25,7 @@ namespace CourseWork.Controllers
 
         [HttpGet]
         [Route("/")]
-        [Route("/dishes")]
+        [Route("dishes")]
         public IActionResult Dishes()
         {
             List<DishResponce> dishResponces = _dishesService.GetDishes();
@@ -33,7 +33,7 @@ namespace CourseWork.Controllers
         }
 
         [HttpGet]
-        [Route("/edit-dish")]
+        [Route("edit-dish")]
         public IActionResult EditDish(Guid dishId, string returnUrl)
         {
             DishResponce dish = _dishesService.GetDishById(dishId);
@@ -43,7 +43,7 @@ namespace CourseWork.Controllers
         }
 
         [HttpPost]
-        [Route("/add-to-cart")]
+        [Route("add-to-cart")]
         public IActionResult AddToCart(Dictionary<string, string> dishData) 
         {
             int basePrice = _dishesService.GetBasePrice(dishData["RestorauntType"], dishData["DishType"]);
@@ -53,7 +53,7 @@ namespace CourseWork.Controllers
         }
 
         [HttpGet]
-        [Route("/my-cart")]
+        [Route("my-cart")]
         public IActionResult MyCart()
         {
             List<CartResponce> cartDishes = _orderBuilder.GetDishesFromCart();
@@ -109,6 +109,13 @@ namespace CourseWork.Controllers
         public IActionResult GetTheOrder()
         {
             _cookingService.StopCooking();
+            return View();
+        }
+
+        [HttpGet]
+        [Route("support")]
+        public IActionResult Support()
+        {
             return View();
         }
     }

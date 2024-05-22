@@ -35,7 +35,8 @@ namespace Services
         {
             return _db.Dishes.First(dish => dish.DishId.Equals(id)).ToDishResponce();
         }
-
+        
+        // TODO: Rewrite using reflection
         public IDishModel CreateDishModel(string dishType, string restorauntType)
         {
             IRestoraunt restoraunt;
