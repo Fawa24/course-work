@@ -1,5 +1,5 @@
 ﻿using CourseWork.Models.EditDishModels;
-using Entities;
+using CourseWork.Entities;
 using IServiceContracts;
 using IServiceContracts.DTO;
 using Microsoft.EntityFrameworkCore;

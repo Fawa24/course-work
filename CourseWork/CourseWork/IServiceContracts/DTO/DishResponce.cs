@@ -1,4 +1,4 @@
-﻿using Entities;
+﻿using CourseWork.Entities;
 
 namespace IServiceContracts.DTO
 {

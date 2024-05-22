@@ -1,6 +1,6 @@
 using CourseWork.IServiceContracts;
 using CourseWork.Services;
-using Entities;
+using CourseWork.Entities;
 using IServiceContracts;
 using Microsoft.EntityFrameworkCore;
 using Services;
