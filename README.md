@@ -58,6 +58,19 @@ CREATE TABLE UserQuestions (
     question_text VARCHAR(300) NOT NULL
 );
 
+CREATE TABLE QuestionAnswer (
+    answer_id UNIQUEIDENTIFIER PRIMARY KEY,
+    answer_text NVARCHAR(MAX) NOT NULL
+);
+
+ALTER TABLE UserQuestions
+ADD answer_id UNIQUEIDENTIFIER;
+
+ALTER TABLE UserQuestions
+ADD CONSTRAINT FK_UserQuestions_QuestionAnswer
+FOREIGN KEY (answer_id) REFERENCES QuestionAnswer(answer_id);
+
+
 ```
 
 
