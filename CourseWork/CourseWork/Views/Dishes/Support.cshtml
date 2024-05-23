@@ -1,3 +1,35 @@
-﻿<form>
-
+﻿<form id="questionForm" method="post" action="/support" style="display: flex; flex-direction: column; align-items: center;">
+    <textarea name="question" style="width: 300px; height: 200px;" placeholder="Enter the question"></textarea>
+    <button style="margin-top: 10px; width: 100px;" type="submit">Submit</button>
 </form>
+
+<div id="answer">
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#questionForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.text();
+                document.querySelector("#answer").innerHTML = result;
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        });
+    });
+</script>

@@ -15,6 +15,7 @@ builder.Services.AddDbContext<DishDbContext>(options =>
 builder.Services.AddSingleton<IOrderBuilder, OrderBuilder>();
 builder.Services.AddSingleton<IPaymentService, PaymentService>();
 builder.Services.AddSingleton<ICookingService, CookingService>();
+builder.Services.AddSingleton<ISupportService, SupportService>();
 var app = builder.Build();
 
 app.UseStaticFiles();

@@ -12,15 +12,15 @@ namespace CourseWork.Controllers
     {
         private readonly IDishesService _dishesService;
         private readonly IOrderBuilder _orderBuilder;
-        private readonly IPaymentService _paymentService;
         private readonly ICookingService _cookingService;
+        private readonly ISupportService _supportService;
 
-        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder, IPaymentService paymentService, ICookingService cookingService)
+        public DishesController(IDishesService dishesService, IOrderBuilder orderBuilder, ICookingService cookingService, ISupportService supportService)
         {
             _dishesService = dishesService;
             _orderBuilder = orderBuilder;
-            _paymentService = paymentService;
             _cookingService = cookingService;
+            _supportService = supportService;
         }
 
         [HttpGet]
@@ -118,5 +118,13 @@ namespace CourseWork.Controllers
         {
             return View();
         }
-    }
+
+		[HttpPost]
+		[Route("support")]
+		public IActionResult SubmitQuestion(string question)
+		{
+            string answer = _supportService.Handle(question);
+			return PartialView("_AnswerPartial", answer);
+		}
+	}
 }

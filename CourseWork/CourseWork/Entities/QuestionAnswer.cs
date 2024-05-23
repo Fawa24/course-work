@@ -5,9 +5,9 @@ namespace CourseWork.Entities;
 
 public partial class QuestionAnswer
 {
-    public Guid AnswerId { get; set; }
+	public Guid AnswerId { get; set; }
 
-    public string AnswerText { get; set; } = null!;
+	public string AnswerText { get; set; } = null!;
 
-    public virtual ICollection<UserQuestion> UserQuestions { get; set; } = new List<UserQuestion>();
+	public virtual ICollection<UserQuestion> UserQuestions { get; set; } = new List<UserQuestion>();
 }
