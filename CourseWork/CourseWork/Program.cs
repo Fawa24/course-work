@@ -13,7 +13,6 @@ builder.Services.AddDbContext<DishDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddSingleton<IOrderBuilder, OrderBuilder>();
-builder.Services.AddSingleton<IPaymentService, PaymentService>();
 builder.Services.AddSingleton<ICookingService, CookingService>();
 builder.Services.AddSingleton<ISupportService, SupportService>();
 var app = builder.Build();

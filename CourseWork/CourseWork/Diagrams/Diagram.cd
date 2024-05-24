@@ -49,7 +49,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Entities.CartObject">
-    <Position X="16" Y="2.75" Width="1.5" />
+    <Position X="15" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAgAAgAAAEIAAAAAAAAAAgA=</HashCode>
       <FileName>Entities\CartObject.cs</FileName>
@@ -161,6 +161,183 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="CourseWork.IServiceContracts.Support.BaseHandler">
+    <Position X="14" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Support\BaseHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Next" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Support.QASectionHandler">
+    <Position X="15.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Support\QASectionHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.Support.SupportManagerHandler">
+    <Position X="12.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\Support\SupportManagerHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Services.SupportService">
+    <Position X="10.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQAAAAAA=</HashCode>
+      <FileName>Services\SupportService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentHundler" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CourseWork.Controllers.DishesController">
+    <Position X="18.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAABAAAAAAQIAAUAaAAAAAAAgAgAAABAABAAACE=</HashCode>
+      <FileName>Controllers\DishesController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dishesService" />
+      <Field Name="_orderBuilder" />
+      <Field Name="_cookingService" />
+      <Field Name="_supportService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseWork.Entities.Dish">
+    <Position X="19" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABCAAAAAAAAACAAAAEAABEACAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Dish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Entities.DishDbContext">
+    <Position X="20.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAARAQAAAAAAQAAAAAEAAAAAAAAAAAEAAAAAQ=</HashCode>
+      <FileName>Entities\DishDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Entities.QuestionAnswer">
+    <Position X="25.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Entities\QuestionAnswer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Entities.UserQuestion">
+    <Position X="23" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgQAAAA=</HashCode>
+      <FileName>Entities\UserQuestion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Answer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="IServiceContracts.DTO.AddDishToCartRequest">
+    <Position X="3.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAAAAggA=</HashCode>
+      <FileName>IServiceContracts\DTO\AddDishToCartRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IServiceContracts.DTO.DictionaryExtension">
+    <Position X="3.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\AddDishToCartRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IServiceContracts.DTO.CartResponce">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAgAAAAAAEIAAAAAAAAAAgA=</HashCode>
+      <FileName>IServiceContracts\DTO\CartResponce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IServiceContracts.DTO.CartObjectExtension">
+    <Position X="7.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\CartResponce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IServiceContracts.DTO.DishAddRequest">
+    <Position X="5.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAACAAAAAAABEACAAgAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\DishAddRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IServiceContracts.DTO.DishResponce">
+    <Position X="9" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAgAAACAAAAEAABMACAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\DishResponce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IServiceContracts.DTO.DishExtencion">
+    <Position X="7.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\DishResponce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.DTO.AddQuestionRequest">
+    <Position X="5.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>IServiceContracts\DTO\AddQuestionRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.DTO.QuestionResponce">
+    <Position X="3.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgQAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\QuestionResponce.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Answer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CourseWork.IServiceContracts.DTO.UserQuestionExtension">
+    <Position X="7.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>IServiceContracts\DTO\QuestionResponce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Models.InputInfoModel">
+    <Position X="27.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\InputInfoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseWork.Models.Pair">
+    <Position X="24" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Pair.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserQuestion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Services.DishesService">
+    <Position X="27" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAEAAAAQAAEAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\DishesService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="CourseWork.Models.EditDishModels.IRestoraunt">
     <Position X="10.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
@@ -179,7 +356,7 @@
     </ShowAsAssociation>
   </Interface>
   <Interface Name="Entities.ICartObjectPrototype">
-    <Position X="16" Y="1" Width="1.5" />
+    <Position X="15" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\ICartObjectPrototype.cs</FileName>
@@ -190,6 +367,27 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAIAAAAAgAAAEAAAAAhAACA=</HashCode>
       <FileName>IServiceContracts\IOrderBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CourseWork.IServiceContracts.ICookingService">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\ICookingService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IServiceContracts.IDishesService" Collapsed="true">
+    <Position X="16" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAQAAEAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\IDishesService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CourseWork.IServiceContracts.ISupportService">
+    <Position X="20.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>IServiceContracts\ISupportService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

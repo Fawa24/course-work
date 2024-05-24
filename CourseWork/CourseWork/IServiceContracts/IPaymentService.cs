@@ -4,8 +4,8 @@ namespace CourseWork.IServiceContracts
 {
     public interface IPaymentService
     {
-		// TODO: Rewrite using reflection
-		public static PaymentStrategy CreatePaymentStrategy(string strategy) 
+        // TODO: Rewrite using reflection
+        public static PaymentStrategy CreatePaymentStrategy(string strategy)
         {
             switch (strategy)
             {
